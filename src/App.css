@@ -1,3 +1,25 @@
 .App {
   text-align: center;
 }
+
+.top {
+  background-color: gainsboro;
+  align-items: center;
+}
+
+.log {
+  margin-top: 25vh;
+  padding: 4vh;
+  background-color: #ffffff;
+  width: 60vh;
+}
+
+.log button {
+  margin-top: 3vh;
+  width: 100%;
+}
+
+.log h1 {
+  margin-bottom: 5vh;
+  color:dimgrey;
+}

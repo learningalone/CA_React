@@ -1,83 +1,115 @@
 import React from "react";
-import { SiHomeassistant } from "react-icons/si";
+import { SiSoundcloud } from "react-icons/si";
+import { FaUserCircle } from "react-icons/fa";
 
-function TopBar() {
+function TopBar({ user, setUser }) {
+  const cerrarSesion = () => {
+    setUser({
+      ...user,
+      id: "",
+      name: "",
+    });
+  };
+
   return (
-    <div classNameName="App">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand fw-bolder fs-2" href="/">
-            <SiHomeassistant />
-            CApp
-          </a>
-          <a className="navbar-brand" href="/">
-            Navbar
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="/"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Action
-                    </a>
+    <>
+      {user.id === "" ? (
+        <div className="App fixed-top">
+          <nav className="top d-flex navbar navbar-expand-lg navbar-light">
+            <div className="container-fluid">
+              <a className="navbar-brand fw-bolder fs-2" href="/">
+                <SiSoundcloud />
+                CApp
+              </a>
+            </div>
+          </nav>
+        </div>
+      ) : (
+        <div className="App fixed-top">
+          <nav className="top d-flex navbar navbar-expand-lg navbar-light">
+            <div className="container-fluid">
+              <a className="navbar-brand fw-bolder fs-2" href="/">
+                <SiSoundcloud />
+                CApp
+              </a>
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li className="nav-item mx-auto" style={{ width: 50 + "vh" }}>
+                    <button type="button" className="btn btn-outline-dark">
+                      Diezmos
+                    </button>
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Another action
-                    </a>
+                  <li className="nav-item mx-auto" style={{ width: 50 + "vh" }}>
+                    <button type="button" className="btn btn-outline-dark">
+                      Ofrendas
+                    </button>
                   </li>
-                  <li>
-                    <hr className="dropdown-divider" />
+                  <li className="nav-item mx-auto" style={{ width: 50 + "vh" }}>
+                    <button type="button" className="btn btn-outline-dark">
+                      Informe
+                    </button>
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Something else here
-                    </a>
+                  <li
+                    className="nav-item dropdown mx-auto"
+                    style={{ width: 50 + "vh" }}
+                  >
+                    <button
+                      className="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <FaUserCircle />
+                      {" " + user.name}
+                    </button>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton1"
+                    >
+                      <li>
+                        <button
+                          type="button"
+                          className="dropdown-item btn btn-secondary"
+                        >
+                          Configuraciones
+                        </button>
+                      </li>
+                      <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          className="dropdown-item btn btn-secondary"
+                          onClick={cerrarSesion}
+                        >
+                          Cerrar Sesion
+                        </button>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="/">
-                  Disabled
-                </a>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </div>
+          </nav>
         </div>
-      </nav>
-    </div>
+      )}
+    </>
   );
 }
 
