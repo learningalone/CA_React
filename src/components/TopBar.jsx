@@ -48,24 +48,29 @@ function TopBar({ user, setUser }) {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item mx-auto" style={{ width: 50 + "vh" }}>
+                  <li className="nav-item mx-auto" style={{ width: 35 + "vh" }}>
                     <button type="button" className="btn btn-outline-dark">
                       Diezmos
                     </button>
                   </li>
-                  <li className="nav-item mx-auto" style={{ width: 50 + "vh" }}>
+                  <li className="nav-item mx-auto" style={{ width: 35 + "vh" }}>
                     <button type="button" className="btn btn-outline-dark">
                       Ofrendas
                     </button>
                   </li>
-                  <li className="nav-item mx-auto" style={{ width: 50 + "vh" }}>
+                  <li className="nav-item mx-auto" style={{ width: 35 + "vh" }}>
                     <button type="button" className="btn btn-outline-dark">
                       Informe
                     </button>
                   </li>
+                  <li className="nav-item mx-auto" style={{ width: 35 + "vh" }}>
+                    <button type="button" className="btn btn-outline-dark">
+                      Congregacion
+                    </button>
+                  </li>
                   <li
                     className="nav-item dropdown mx-auto"
-                    style={{ width: 50 + "vh" }}
+                    style={{ width: 40 + "vh" }}
                   >
                     <button
                       className="btn btn-secondary dropdown-toggle"
